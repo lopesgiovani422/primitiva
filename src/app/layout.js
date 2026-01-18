@@ -34,13 +34,13 @@ const spaceMono = localFont({
 });
 
 export const metadata = {
-  metadataBase: new URL('https://primitiva-app.netlify.app'),
+  metadataBase: new URL('https://chipper-tiramisu-c22958.netlify.app'),
   title: "Primitiva — Estúdio Criativo",
   description: "Estúdio criativo especializado em branding, design e experiências digitais que fogem do óbvio.",
   openGraph: {
     title: "Primitiva — Estúdio Criativo",
     description: "Estúdio criativo especializado em branding, design e experiências digitais que fogem do óbvio.",
-    url: "https://primitiva-app.netlify.app",
+    url: "https://chipper-tiramisu-c22958.netlify.app",
     siteName: "Primitiva",
     images: [
       {
