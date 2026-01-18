@@ -67,7 +67,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="pt-BR" className={`light scroll-smooth ${spaceGrotesk.variable} ${playfairDisplay.variable} ${spaceMono.variable}`}>
+    <html lang="pt-BR" className={`light ${spaceGrotesk.variable} ${playfairDisplay.variable} ${spaceMono.variable}`}>
       <body
         className="antialiased bg-background-light text-[#181010] font-display"
       >
