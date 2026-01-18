@@ -59,7 +59,7 @@ export default function Ninho() {
     return (
         <>
             <div className="bg-background-dark text-white overflow-x-hidden selection:bg-white selection:text-black">
-                <div className="fixed inset-0 z-50 pointer-events-none opacity-[0.07] mix-blend-overlay bg-[image:var(--background-image-grain)]"></div>
+                <div className="hidden md:block fixed inset-0 z-50 pointer-events-none opacity-[0.07] mix-blend-overlay bg-[image:var(--background-image-grain)]"></div>
 
                 <ProjectNavigation />
 

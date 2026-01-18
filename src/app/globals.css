@@ -84,6 +84,7 @@
       opacity: 0;
       transform: translate3d(0, 40px, 0);
       transition: opacity 1.2s ease-out, transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform;
     }
 
     .reveal-up.active {
@@ -94,7 +95,8 @@
     .reveal-text {
       opacity: 0;
       transform: translate3d(0, 30px, 0);
-      transition: all 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+      transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+      will-change: opacity, transform;
     }
 
     .reveal-text.active {
@@ -105,7 +107,8 @@
     .reveal-img {
       opacity: 0;
       transform: scale(1.05) translate3d(0, 0, 0);
-      transition: all 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+      transition: opacity 1.5s cubic-bezier(0.25, 1, 0.5, 1), transform 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+      will-change: opacity, transform;
     }
 
     .reveal-img.active {
@@ -135,12 +138,15 @@
   }
 
   .line-grow {
-    width: 0;
-    transition: width 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left top;
+    transition: transform 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
   }
 
   .line-grow.active {
-    width: 100%;
+    transform: scaleX(1);
   }
 
   .cv-auto {
