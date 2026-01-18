@@ -67,7 +67,7 @@ export default function Home() {
       <Header />
 
       <div className="grid grid-cols-1 md:grid-cols-3 w-full">
-        <Link href="/projetos/pedecafe" className="group relative aspect-[4/5] overflow-hidden cursor-pointer reveal-up">
+        <Link href="/projetos/pedecafe" prefetch={false} className="group relative aspect-[4/5] overflow-hidden cursor-pointer reveal-up">
           <img src="/assets/cover/pedecafe.webp" alt="Pé de Café"
             className="absolute inset-0 w-full h-full object-cover object-center contrast-125 transition-transform duration-700 group-hover:scale-105"
             loading="lazy" width="800" height="1000" />
@@ -78,7 +78,7 @@ export default function Home() {
           </div>
         </Link>
 
-        <Link href="/projetos/ninho" className="group relative aspect-[4/5] overflow-hidden cursor-pointer reveal-up delay-100">
+        <Link href="/projetos/ninho" prefetch={false} className="group relative aspect-[4/5] overflow-hidden cursor-pointer reveal-up delay-100">
           <img src="/assets/cover/ninho.webp" alt="Ninho"
             className="absolute inset-0 w-full h-full object-cover object-center contrast-125 transition-transform duration-700 group-hover:scale-105"
             loading="lazy" width="800" height="1000" />
@@ -89,7 +89,7 @@ export default function Home() {
           </div>
         </Link>
 
-        <Link href="/projetos/oqfjf" className="group relative aspect-[4/5] overflow-hidden cursor-pointer reveal-up delay-200">
+        <Link href="/projetos/oqfjf" prefetch={false} className="group relative aspect-[4/5] overflow-hidden cursor-pointer reveal-up delay-200">
           <img src="/assets/cover/oqfjf.webp" alt="O Que Fazer em JF?"
             className="absolute inset-0 w-full h-full object-cover object-center contrast-[1.5] brightness-75 transition-transform duration-700 group-hover:scale-105"
             loading="lazy" width="800" height="1000" />
