@@ -11,9 +11,22 @@ export default function PedeCafe() {
         import('@dotlottie/player-component').then(() => {
             const players = document.querySelectorAll('dotlottie-player');
             players.forEach(player => {
+                // Force properties to ensure they are active
+                player.loop = true;
+                player.autoplay = true;
+
                 player.addEventListener('ready', () => {
                     player.play();
                 });
+
+                // Fail-safe: try to play if it's already instantiated
+                if (player.play) {
+                    try {
+                        player.play();
+                    } catch (e) {
+                        // Player might not be ready yet, the listener above will catch it
+                    }
+                }
             });
         });
 
@@ -29,11 +42,13 @@ export default function PedeCafe() {
                     entry.target.classList.add('active');
                     observer.unobserve(entry.target);
 
-                    // If the target contains a lottie player, try to play it
-                    const player = entry.target.querySelector('dotlottie-player');
-                    if (player && player.play) {
-                        player.play();
-                    }
+                    // If the target contains lottie players, try to play ALL of them
+                    const players = entry.target.querySelectorAll('dotlottie-player');
+                    players.forEach(player => {
+                        if (player.play) {
+                            player.play();
+                        }
+                    });
                 }
             });
         }, observerOptions);
@@ -296,7 +311,7 @@ export default function PedeCafe() {
                                     </p>
                                 </div>
 
-                                <div className="relative w-full order-3 md:order-2 -mt-6 md:mt-0">
+                                <div className="relative w-full order-3 md:order-2 -mt-6 md:mt-0 scroll-trigger">
                                     <div className="flex md:hidden w-full aspect-[3/4] relative">
                                         <dotlottie-player src="/assets/pedecafe/lottie/mobile/animation2.lottie"
                                             background="transparent" speed="1" className="absolute inset-0 w-full h-full"
