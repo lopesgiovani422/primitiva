@@ -34,8 +34,24 @@ const spaceMono = localFont({
 });
 
 export const metadata = {
+  metadataBase: new URL('https://primitiva-app.netlify.app'),
   title: "Primitiva — Estúdio Criativo",
   description: "Estúdio criativo especializado em branding, design e experiências digitais que fogem do óbvio.",
+  openGraph: {
+    title: "Primitiva — Estúdio Criativo",
+    description: "Estúdio criativo especializado em branding, design e experiências digitais que fogem do óbvio.",
+    url: "https://primitiva-app.netlify.app",
+    siteName: "Primitiva",
+    images: [
+      {
+        url: "/assets/primitiva/primitiva1.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+  },
   icons: {
     icon: [
       { url: "/favicon/favicon.ico", sizes: "any" },
