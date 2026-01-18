@@ -41,7 +41,7 @@ export default function Services() {
                             O que fazemos
                         </h2>
                         <p className="hidden md:block text-white/60 font-serif text-lg mt-4 reveal-up delay-100 max-w-xs">
-                            Nosso arsenal de ferramentas para construir marcas que não pedem licença para existir.
+                            Da fundação até o desenvolvimento de um aplicativo, nós temos o que você precisa.
                         </p>
                     </div>
 

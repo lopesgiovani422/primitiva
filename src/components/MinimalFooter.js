@@ -11,6 +11,7 @@ export default function MinimalFooter() {
 
                     {/* Column aligns with ContactOptions (8 columns) */}
                     <div className="md:col-span-8 flex flex-col items-start justify-between self-stretch">
+
                         <div className="flex flex-col items-start gap-6">
                             <Link href="/" className="inline-block group">
                                 <img
@@ -23,7 +24,7 @@ export default function MinimalFooter() {
                                 />
                             </Link>
                             <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-white/30">
-                                Primitiva
+                                Branding para quem ousa
                             </p>
                         </div>
 

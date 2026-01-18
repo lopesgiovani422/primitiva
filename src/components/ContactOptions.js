@@ -4,7 +4,7 @@ export default function ContactOptions() {
     return (
         <div className="md:col-span-8 flex flex-col reveal-up delay-200 mb-16 md:mb-0">
             <p className="text-white/60 font-serif text-lg mb-12 max-w-md">
-                Tem um projeto audacioso em mente? Escolha a melhor forma de iniciar nosso ritual.
+                Tem um projeto audacioso em mente? <br />Escolha a melhor forma de iniciar nosso ritual.
             </p>
 
             <div className="flex flex-col border-t border-white/20">
