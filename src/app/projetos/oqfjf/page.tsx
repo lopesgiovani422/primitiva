@@ -141,12 +141,12 @@ export default function OqueFazerEmJF() {
                             </p>
                             <div className="mt-8 pt-8 border-t border-white/10 flex gap-8 reveal-text scroll-trigger delay-300">
                                 <div>
-                                    <span className="block text-2xl font-bold font-display text-white">Diverso</span>
-                                    <span className="text-xs font-mono text-neutral-500 uppercase">Estilo</span>
+                                    <span className="block text-2xl font-bold font-display text-white">140k+</span>
+                                    <span className="text-xs font-mono text-neutral-500 uppercase">Seguidores</span>
                                 </div>
                                 <div>
-                                    <span className="block text-2xl font-bold font-display text-white">Curioso</span>
-                                    <span className="text-xs font-mono text-neutral-500 uppercase">Espírito</span>
+                                    <span className="block text-2xl font-bold font-display text-white">100+</span>
+                                    <span className="text-xs font-mono text-neutral-500 uppercase">Parceiros</span>
                                 </div>
                             </div>
                         </div>

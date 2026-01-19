@@ -5,7 +5,7 @@ export default function AboutValues() {
         <section className="py-20 px-6 md:py-32">
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-3xl md:text-5xl font-display font-bold uppercase mb-16 reveal-up">
-                    Trabalhamos para que <br className="hidden md:block" />sua marca tenha:
+                    Trabalhamos para que sua marca tenha:
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
                     <div className="reveal-up delay-100 group">
@@ -14,7 +14,7 @@ export default function AboutValues() {
                             Estratégia
                         </h3>
                         <p className="text-sm md:text-base opacity-70 leading-relaxed font-serif">
-                            Não desenhamos nada sem saber o porquê. Investigamos o mercado, o público e a alma do negócio para traçar rotas que funcionam no mundo real.
+                            Não desenhamos nada sem saber o porquê. Investigamos o mercado, o público e a alma da marca para definir rotas claras e um posicionamento que resolva problemas reais de negócio.
                         </p>
                     </div>
 
@@ -24,7 +24,7 @@ export default function AboutValues() {
                             Identidade
                         </h3>
                         <p className="text-sm md:text-base opacity-70 leading-relaxed font-serif">
-                            Traduzimos estratégia em visual. Criamos sistemas de design proprietários, tipografias com personalidade e identidades que não pedem licença.
+                            Visual que gera desejo. Traduzimos conceitos em sistemas proprietários, garantindo que sua marca seja reconhecida antes mesmo de ser lida.
                         </p>
                     </div>
 
@@ -34,7 +34,7 @@ export default function AboutValues() {
                             Experiência
                         </h3>
                         <p className="text-sm md:text-base opacity-70 leading-relaxed font-serif">
-                            Do digital ao físico. Desenvolvemos sites, embalagens e materiais gráficos que garantem que a marca respire a mesma verdade em todos os pontos de contato.
+                            Consistência gera confiança. Do site à embalagem, orquestramos todos os pontos de contato para que a marca tenha uma voz única e coerente.
                         </p>
                     </div>
                 </div>

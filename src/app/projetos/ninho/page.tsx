@@ -8,31 +8,55 @@ export default function Ninho() {
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
+        // Dynamic import of the player
         import('@dotlottie/player-component').then(() => {
-            const players = document.querySelectorAll('dotlottie-player');
-            players.forEach((player: any) => {
-                player.addEventListener('ready', () => {
-                    player.play();
+            const setupPlayers = () => {
+                const players = document.querySelectorAll('dotlottie-player');
+                players.forEach((player: any) => {
+                    // Force properties
+                    player.loop = true;
+                    player.autoplay = true;
+
+                    // Event listener for when the player is ready
+                    player.addEventListener('ready', () => {
+                        player.setLoop(true);
+                        player.play();
+                    });
+
+                    // Ensure it plays if it loads later
+                    player.addEventListener('load', () => {
+                        player.setLoop(true);
+                        player.play();
+                    });
                 });
-            });
+            };
+
+            // Run setup immediately and also observe for DOM changes if needed, 
+            // but for now just running it after a short delay to ensure DOM is ready
+            setTimeout(setupPlayers, 100);
         });
 
         const observerOptions = {
             root: null,
-            rootMargin: '0px 0px -50px 0px',
-            threshold: 0
+            rootMargin: '0px',
+            threshold: 0.1
         };
 
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
-                    observer.unobserve(entry.target);
 
-                    // If the target contains a lottie player, try to play it
+                    // Handle Lottie players entering viewport
                     const player = entry.target.querySelector('dotlottie-player') as any;
-                    if (player && player.play) {
+                    if (player && typeof player.play === 'function') {
                         player.play();
+                    }
+                } else {
+                    // Pause Lottie players leaving viewport to save resources
+                    const player = entry.target.querySelector('dotlottie-player') as any;
+                    if (player && typeof player.pause === 'function') {
+                        player.pause();
                     }
                 }
             });
@@ -44,8 +68,13 @@ export default function Ninho() {
                 el.classList.add('active');
             });
 
+            // Observe standard scroll trigger elements
             const elements = document.querySelectorAll('.scroll-trigger');
             elements.forEach(el => observer.observe(el));
+
+            // Also explicitly observe sections containing lottie players
+            const lottieContainers = document.querySelectorAll('.lottie-container, section:has(dotlottie-player)');
+            lottieContainers.forEach(el => observer.observe(el));
         };
 
         // Trigger immediately for Ninho as it doesn't have a heavy preloader

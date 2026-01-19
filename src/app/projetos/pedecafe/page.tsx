@@ -9,44 +9,54 @@ export default function PedeCafe() {
 
     useEffect(() => {
         import('@dotlottie/player-component').then(() => {
-            const players = document.querySelectorAll('dotlottie-player');
-            players.forEach((player: any) => {
-                // Force properties to ensure they are active
-                player.loop = true;
-                player.autoplay = true;
+            const setupPlayers = () => {
+                const players = document.querySelectorAll('dotlottie-player');
+                players.forEach((player: any) => {
+                    // Force properties
+                    player.loop = true;
+                    player.autoplay = true;
 
-                player.addEventListener('ready', () => {
-                    player.play();
-                });
-
-                // Fail-safe: try to play if it's already instantiated
-                if (player.play) {
-                    try {
+                    // Event listener for when the player is ready
+                    player.addEventListener('ready', () => {
+                        player.setLoop(true);
                         player.play();
-                    } catch (e) {
-                        // Player might not be ready yet, the listener above will catch it
-                    }
-                }
-            });
+                    });
+
+                    // Ensure it plays if it loads later
+                    player.addEventListener('load', () => {
+                        player.setLoop(true);
+                        player.play();
+                    });
+                });
+            };
+
+            setTimeout(setupPlayers, 100);
         });
 
         const observerOptions = {
             root: null,
-            rootMargin: '0px 0px -50px 0px',
-            threshold: 0
+            rootMargin: '0px',
+            threshold: 0.1
         };
 
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
-                    observer.unobserve(entry.target);
 
-                    // If the target contains lottie players, try to play ALL of them
+                    // Handle Lottie players entering viewport
                     const players = entry.target.querySelectorAll('dotlottie-player');
                     players.forEach((player: any) => {
-                        if (player.play) {
+                        if (player && typeof player.play === 'function') {
                             player.play();
+                        }
+                    });
+                } else {
+                    // Pause Lottie players leaving viewport
+                    const players = entry.target.querySelectorAll('dotlottie-player');
+                    players.forEach((player: any) => {
+                        if (player && typeof player.pause === 'function') {
+                            player.pause();
                         }
                     });
                 }

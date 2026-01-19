@@ -9,24 +9,24 @@ interface ServiceItem {
 
 const services: ServiceItem[] = [
     {
-        title: "Estratégia",
-        content: "Definimos o posicionamento, tom de voz e o território da marca para garantir relevância no mercado."
+        title: "Estratégia de Marca",
+        content: "Antes do visual, o conceito. Definimos posicionamento, arquétipo e tom de voz para garantir que sua marca ocupe um lugar único na mente do consumidor."
     },
     {
         title: "Identidade Visual",
-        content: "Criação de logotipos, sistemas visuais, paletas de cores e tipografia. Traduzimos a estratégia em elementos visuais proprietários e marcantes."
+        content: "Traduzimos estratégia em desejo. Criamos sistemas visuais proprietários: logotipos, cores e tipografia, que tornam sua marca inconfundível."
     },
     {
-        title: "UX/UI Design",
-        content: "Design de interfaces focadas na experiência do usuário. Criamos jornadas intuitivas e layouts funcionais para produtos digitais."
+        title: "Design de Interfaces (UX/UI)",
+        content: "Interfaces que as pessoas amam usar. Desenhamos jornadas intuitivas e layouts funcionais, focados na melhor experiência para o usuário final."
     },
     {
-        title: "Web Development",
-        content: "Desenvolvimento front-end e back-end de sites institucionais, landing pages e aplicações web com foco em performance e SEO."
+        title: "Desenvolvimento Web",
+        content: "Desenvolvimento front-end e back-end de sites e aplicações com código limpo, rápido e otimizado para SEO."
     },
     {
-        title: "Packaging",
-        content: "Design de embalagens que destacam o produto no ponto de venda e criam uma experiência de unboxing memorável."
+        title: "Design de Embalagens",
+        content: "Criamos rótulos e embalagens que se destacam na prateleira e geram uma experiência de unboxing memorável."
     }
 ];
 
@@ -46,7 +46,7 @@ export default function Services() {
                             O que fazemos
                         </h2>
                         <p className="hidden md:block text-white/60 font-serif text-lg mt-4 reveal-up delay-100 max-w-xs">
-                            Da fundação até o desenvolvimento de um aplicativo, nós temos o que você precisa.
+                            Da essência à experiência digital. Unimos estratégia, design e código para construir marcas completas.
                         </p>
                     </div>
 

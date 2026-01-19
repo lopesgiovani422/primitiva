@@ -53,10 +53,10 @@ export default function Sobre() {
             <AboutPageHero />
             <AboutOrigin />
             <AboutSectionImage
-                src="/assets/primitiva/primitiva1.webp"
+                src="/assets/primitiva/about_us.webp"
                 alt="Primitiva Studio"
                 location="Juiz de Fora — MG"
-                established="2025"
+                established="2022"
             />
             <AboutTeam />
             <AboutValues />
