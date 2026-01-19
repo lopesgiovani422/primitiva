@@ -1,0 +1,5 @@
+﻿src/app/briefing/steps/Step1.tsx(3,10): error TS1484: 'UseFormRegister' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/app/briefing/steps/Step2.tsx(3,10): error TS1484: 'UseFormRegister' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/app/briefing/steps/Step3.tsx(3,10): error TS1484: 'UseFormRegister' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/app/briefing/steps/Step4.tsx(3,10): error TS1484: 'UseFormRegister' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/app/briefing/steps/Step8.tsx(3,10): error TS1484: 'UseFormRegister' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.

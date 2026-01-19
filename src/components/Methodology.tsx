@@ -13,17 +13,17 @@ export default function Methodology() {
                     <div className="reveal-up delay-100 border-[3px] border-black bg-white p-6 md:p-8 relative h-full">
                         <span className="absolute -top-4 left-6 bg-black text-white px-3 py-1 text-sm font-bold font-mono">Fase 1</span>
                         <h4 className="text-2xl font-black uppercase mt-2 mb-3">Imersão</h4>
-                        <p className="text-sm leading-relaxed opacity-80">Mergulhamos fundo na essência do negócio. Entrevistas, pesquisa arqueológica e busca pela verdade crua.</p>
+                        <p className="text-sm leading-relaxed opacity-80">Mergulhamos fundo na essência da marca. Entrevistas, pesquisa e busca pela verdade que move a sua empresa.</p>
                     </div>
                     <div className="reveal-up delay-200 border-[3px] border-black bg-white p-6 md:p-8 relative h-full">
                         <span className="absolute -top-4 left-6 bg-black text-white px-3 py-1 text-sm font-bold font-mono">Fase 2</span>
-                        <h4 className="text-2xl font-black uppercase mt-2 mb-3">Tradução</h4>
-                        <p className="text-sm leading-relaxed opacity-80">Transformamos conceitos abstratos em códigos visuais e verbais tangíveis. A magia ganha forma.</p>
+                        <h4 className="text-2xl font-black uppercase mt-2 mb-3">Criação</h4>
+                        <p className="text-sm leading-relaxed opacity-80">Transformamos conceitos abstratos em códigos visuais e verbais tangíveis.</p>
                     </div>
                     <div className="reveal-up delay-300 border-[3px] border-black bg-white p-6 md:p-8 relative h-full">
                         <span className="absolute -top-4 left-6 bg-black text-white px-3 py-1 text-sm font-bold font-mono">Fase 3</span>
-                        <h4 className="text-2xl font-black uppercase mt-2 mb-3">Expansão</h4>
-                        <p className="text-sm leading-relaxed opacity-80">Entrega dos assets e diretrizes para que a marca ocupe seu território no mundo real.</p>
+                        <h4 className="text-2xl font-black uppercase mt-2 mb-3">Finalização</h4>
+                        <p className="text-sm leading-relaxed opacity-80">Entrega dos arquivos e diretrizes para que a marca ocupe seu território no mundo real.</p>
                     </div>
                 </div>
             </div>

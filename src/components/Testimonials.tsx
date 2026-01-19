@@ -10,19 +10,19 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
     {
-        quote: "A Primitiva não criou apenas um logo, eles traduziram exatamente a essência de tudo o que representava nosso concurso.",
-        author: "Mirella Motta",
-        role: "Pé de Café"
+        quote: "Já estou doida pra mudar totalmente o look! Preciso agradecer imensamente pelo trabalho perfeito. Que honra!",
+        author: "Mirella",
+        role: "O Que Fazer em JF?"
     },
     {
-        quote: "Eles conseguiram captar uma complexidade estratégica e transformar em uma identidade visual simples, mas extremamente potente.",
-        author: "João Silva",
-        role: "TechStart"
+        quote: "Você conseguiu me tirar um sorriso imenso junto com aquele silêncio de satisfação. Estou apaixonada, para dizer o mínimo.",
+        author: "Paola",
+        role: "Tatuadora"
     },
     {
-        quote: "O processo de imersão foi um divisor de águas para nós. O resultado final superou qualquer expectativa que tínhamos.",
-        author: "Ana Clara",
-        role: "Studio Aura"
+        quote: "Ficou sensacional e estou amando aplicar a marca aos pouquinhos! Só tenho a agradecer por esse trabalho maravilhoso e tão a minha cara.",
+        author: "Isabela",
+        role: "Ninho"
     }
 ];
 

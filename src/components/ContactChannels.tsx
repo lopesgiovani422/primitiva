@@ -35,14 +35,6 @@ export default function ContactChannels() {
                         >
                             Behance ↗
                         </a>
-                        <a
-                            href="https://www.linkedin.com/company/primitiva.cc"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-xl md:text-2xl hover:text-white/70 transition-colors font-display"
-                        >
-                            LinkedIn ↗
-                        </a>
                     </div>
                 </div>
 

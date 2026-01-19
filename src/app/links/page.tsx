@@ -13,22 +13,22 @@ export default function Links() {
     }, []);
 
     return (
-        <div className="text-white font-display antialiased selection:bg-white selection:text-black bg-black min-h-screen">
+        <div className="text-white font-display antialiased selection:bg-white selection:text-black bg-black h-[100dvh] w-full overflow-hidden">
 
             {/* Efeito de Grão */}
             <div className="fixed inset-0 pointer-events-none z-50 opacity-20 mix-blend-overlay bg-grain"></div>
 
-            <main className="relative z-10 min-h-[100svh] max-w-md mx-auto flex flex-col p-4">
+            <main className="relative z-10 w-full h-full max-w-md mx-auto flex flex-col px-4 py-6 md:py-8 gap-4">
 
-                {/* Header Spacer */}
-                <header className="pt-8 pb-4 reveal-up"></header>
+                {/* Header - Minimal spacer */}
+                <div className="shrink-0"></div>
 
-                {/* Bento Grid */}
-                <div className="grid grid-cols-2 gap-3 mb-8">
+                {/* Bento Grid - Fills available space */}
+                <div className="flex-1 min-h-0 grid grid-cols-2 grid-rows-[2fr_1.1fr_0.4fr] gap-3">
 
-                    {/* Portfólio (Destaque) */}
+                    {/* Portfólio (Destaque) - Row 1 (Biggest) */}
                     <Link href="/"
-                        className="bento-card col-span-2 bg-neutral-900 text-white p-8 flex flex-col justify-between aspect-[16/9] reveal-up group relative overflow-hidden delay-100">
+                        className="bento-card col-span-2 row-span-1 bg-neutral-900 text-white p-6 md:p-8 flex flex-col justify-between h-full reveal-up group relative overflow-hidden delay-100 rounded-sm">
                         {/* Slideshow Background */}
                         <div className="absolute inset-0 z-0">
                             <div className="absolute inset-0 bg-cover bg-center grayscale contrast-125 opacity-0 animate-slideshow"
@@ -43,45 +43,45 @@ export default function Links() {
                         <div className="flex justify-between items-start relative z-10">
                             <span className="text-[10px] font-mono uppercase tracking-widest opacity-60">Portfolio</span>
                             <span
-                                className="material-symbols-outlined text-3xl group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">arrow_outward</span>
+                                className="material-symbols-outlined text-2xl md:text-3xl group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">arrow_outward</span>
                         </div>
                         <div className="relative z-10 text-left">
-                            <h2 className="text-4xl font-black uppercase tracking-tighter leading-none mb-2">Ver<br />Projetos</h2>
+                            <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter leading-none mb-2">Ver<br />Projetos</h2>
                         </div>
                     </Link>
 
                     {/* WhatsApp */}
                     <a href="https://wa.me/5532999508150" target="_blank"
-                        className="bento-card col-span-1 bg-neutral-900 border border-white/5 p-5 flex flex-col justify-between aspect-square reveal-up group delay-200">
+                        className="bento-card col-span-1 row-span-1 bg-neutral-900 border border-white/5 p-4 md:p-5 flex flex-col justify-between h-full reveal-up group delay-200 rounded-sm">
                         <div className="flex justify-between items-start">
                             <div className="size-2 bg-green-500 rounded-full animate-pulse"></div>
                         </div>
                         <div>
                             <span className="text-[10px] font-mono uppercase tracking-widest text-white/40 block mb-1">Manda um
                                 oi</span>
-                            <h3 className="text-xl font-bold uppercase tracking-tight">Whats<br />App</h3>
+                            <h3 className="text-lg md:text-xl font-bold uppercase tracking-tight">Whats<br />App</h3>
                         </div>
                     </a>
 
                     {/* Briefing */}
                     <Link href="/briefing"
-                        className="bento-card col-span-1 bg-neutral-900 border border-white/5 p-5 flex flex-col justify-between aspect-square reveal-up group delay-300">
+                        className="bento-card col-span-1 row-span-1 bg-neutral-900 border border-white/5 p-4 md:p-5 flex flex-col justify-between h-full reveal-up group delay-300 rounded-sm">
                         <div className="flex justify-between items-start">
                         </div>
                         <div className="flex items-end justify-between">
                             <div>
                                 <span
                                     className="text-[10px] font-mono uppercase tracking-widest text-white/40 block mb-1">Orçamentos</span>
-                                <h3 className="text-xl font-bold uppercase tracking-tight">Iniciar<br />Projeto</h3>
+                                <h3 className="text-lg md:text-xl font-bold uppercase tracking-tight">Iniciar<br />Projeto</h3>
                             </div>
                             <span
-                                className="material-symbols-outlined text-3xl group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">arrow_outward</span>
+                                className="material-symbols-outlined text-2xl md:text-3xl group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">arrow_outward</span>
                         </div>
                     </Link>
 
                     {/* Contato / Email */}
                     <a href="mailto:ola@primitiva.cc"
-                        className="bento-card col-span-2 bg-neutral-900 border border-white/5 p-6 flex items-center justify-between reveal-up group delay-400">
+                        className="bento-card col-span-2 row-span-1 bg-neutral-900 border border-white/5 p-4 md:p-6 flex items-center justify-between h-full reveal-up group delay-400 rounded-sm">
                         <div className="flex flex-col">
                             <span className="text-xs font-bold uppercase tracking-tight">ola@primitiva.cc</span>
                         </div>
@@ -92,16 +92,15 @@ export default function Links() {
 
                 </div>
 
-                {/* Social Footer */}
-                <footer className="mt-4 pt-4 pb-12 text-center reveal-up delay-500">
-                    <div className="flex flex-col items-center gap-6">
+                {/* Social Footer - Compact */}
+                <footer className="shrink-0 pt-0 pb-2 text-center reveal-up delay-500">
+                    <div className="flex flex-col items-center gap-4">
                         <Link href="/">
                             <img src="/assets/primitiva/primitiva_logo.svg" alt="Logo Primitiva"
-                                className="h-6 w-auto opacity-40 hover:opacity-100 transition-opacity" fetchPriority="high"
-                                width="120" height="24" />
+                                className="h-5 w-auto opacity-40 hover:opacity-100 transition-opacity" fetchPriority="high"
+                                width="100" height="20" />
                         </Link>
-                        <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/40">Primitiva</p>
-                        <div className="h-px w-8 bg-white/20"></div>
+                        <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-white/40">Primitiva</p>
                     </div>
                 </footer>
 

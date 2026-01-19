@@ -98,7 +98,7 @@ export default function PedeCafe() {
                 </div>
             )}
 
-            <div className={`bg-background-dark text-white overflow-x-hidden selection:bg-white selection:text-black ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500`}>
+            <div className={`bg-background-dark text-white selection:bg-white selection:text-black ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500`}>
                 <div className="hidden md:block fixed inset-0 z-50 pointer-events-none opacity-[0.07] mix-blend-overlay bg-[image:var(--background-image-grain)]"></div>
 
                 <ProjectNavigation />
@@ -281,7 +281,7 @@ export default function PedeCafe() {
                                     <div className="size-6 bg-[#f7f0ea] border border-white/30" title="Charcoal"></div>
                                     <div className="size-6 bg-[#ffffff] border border-white/30" title="White"></div>
                                 </div>
-                                <p className="text-white text-xs font-mono mt-2">OBSIDIAN & BONE</p>
+                                <p className="text-white text-xs font-mono mt-2">BLUE MOUNTAIN COFFEE</p>
                             </div>
                         </div>
                     </section>

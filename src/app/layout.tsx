@@ -33,7 +33,11 @@ const spaceMono = localFont({
   display: "swap",
 });
 
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
+
+export const viewport: Viewport = {
+  themeColor: '#ffffff',
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://chipper-tiramisu-c22958.netlify.app'),

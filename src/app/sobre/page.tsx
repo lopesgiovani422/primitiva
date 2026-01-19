@@ -49,26 +49,18 @@ export default function Sobre() {
     }, []);
 
     return (
-        <div className="bg-background-light font-display antialiased text-[#181010]">
-            <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden">
-
-                <AboutPageHero />
-
-                <AboutOrigin />
-
-                <AboutSectionImage
-                    src="/assets/primitiva/primitiva1.jpg"
-                    alt="Primitiva Studio"
-                    location="Juiz de Fora — MG"
-                    established="2025"
-                />
-
-                <AboutTeam />
-
-                <AboutValues />
-
-                <SimpleFooter />
-            </div>
-        </div>
+        <main className="bg-background-light font-display antialiased text-[#181010]">
+            <AboutPageHero />
+            <AboutOrigin />
+            <AboutSectionImage
+                src="/assets/primitiva/primitiva1.webp"
+                alt="Primitiva Studio"
+                location="Juiz de Fora — MG"
+                established="2025"
+            />
+            <AboutTeam />
+            <AboutValues />
+            <SimpleFooter />
+        </main>
     );
 }

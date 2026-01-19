@@ -16,10 +16,10 @@ export default function Header() {
                 </div>
             </nav>
 
-            <div className="flex-1 flex flex-col justify-center items-start mt-10 w-full">
-                <div className="relative mb-8 overflow-hidden w-full">
+            <div className="flex-1 flex flex-col items-start mt-4 md:mt-10 w-full min-h-0">
+                <div className="relative mb-4 md:mb-8 overflow-hidden w-full flex-1 flex flex-col justify-end lg:justify-center">
                     <h1
-                        className="font-display font-black text-[18vw] md:text-[10vw] lg:text-[9vw] leading-[0.8] tracking-tighter uppercase text-white mix-blend-difference reveal-up delay-100 w-full break-words">
+                        className="font-display font-black text-[18vw] md:text-[9vw] lg:text-[7vw] xl:text-[8vw] 2xl:text-[9vw] leading-[0.8] tracking-tighter uppercase text-white mix-blend-difference reveal-up delay-100 w-full break-words">
                         SEJA<br />
                         DIFÍCIL<br />
                         DE<br />
@@ -27,17 +27,17 @@ export default function Header() {
                     </h1>
                 </div>
 
-                <div className="w-full grid grid-cols-2 gap-4 mt-auto border-t border-white/20 pt-6 reveal-up delay-300">
-                    <div>
-                        <p className="text-sm md:text-base font-light italic opacity-80 max-w-[250px] md:max-w-md">
-                            Construímos marcas sólidas <br />para negócios <br />que não aceitam <br />ser só mais um.
+                <div className="w-full flex justify-between items-end gap-4 mt-auto border-t border-white/20 pt-6 reveal-up delay-300 shrink-0">
+                    <div className="max-w-[70%] md:max-w-md">
+                        <p className="text-sm md:text-base font-light italic opacity-80 leading-relaxed">
+                            Construímos marcas ousadas para negócios que não aceitam ser só mais um.
                         </p>
                     </div>
                     <div className="flex justify-end items-end">
-                        <span className="material-symbols-outlined text-4xl animate-bounce">arrow_downward</span>
+                        <span className="material-symbols-outlined text-3xl md:text-4xl animate-bounce">arrow_downward</span>
                     </div>
                 </div>
             </div>
-        </header>
+        </header >
     );
 }
