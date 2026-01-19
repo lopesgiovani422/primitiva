@@ -1,6 +1,8 @@
 import localFont from "next/font/local";
 import "./globals.css";
 
+import { Instrument_Serif } from "next/font/google";
+
 const spaceGrotesk = localFont({
   src: [
     { path: "./fonts/space-grotesk-normal-300.woff2", weight: "300", style: "normal" },
@@ -13,13 +15,11 @@ const spaceGrotesk = localFont({
   display: "swap",
 });
 
-const playfairDisplay = localFont({
-  src: [
-    { path: "./fonts/playfair-display-normal-400.woff2", weight: "400", style: "normal" },
-    { path: "./fonts/playfair-display-normal-600.woff2", weight: "600", style: "normal" },
-    { path: "./fonts/playfair-display-italic-400.woff2", weight: "400", style: "italic" },
-  ],
-  variable: "--font-playfair-display",
+const instrumentSerif = Instrument_Serif({
+  weight: "400",
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  variable: "--font-instrument-serif",
   display: "swap",
 });
 
@@ -107,7 +107,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" className={`light ${spaceGrotesk.variable} ${playfairDisplay.variable} ${spaceMono.variable}`}>
+    <html lang="pt-BR" className={`light ${spaceGrotesk.variable} ${instrumentSerif.variable} ${spaceMono.variable}`}>
       <body
         className="antialiased bg-background-light text-[#181010] font-display"
       >
