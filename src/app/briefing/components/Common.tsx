@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import { Check, AlertCircle } from 'lucide-react';
 
 interface StepContainerProps {
     children: React.ReactNode;
@@ -48,7 +49,7 @@ export function OptionCard({ label, selected, onClick }: OptionCardProps) {
                 }`}
         >
             <span className="font-display font-medium">{label}</span>
-            {selected && <span className="material-symbols-outlined text-sm">check</span>}
+            {selected && <Check className="w-4 h-4" />}
         </div>
     );
 }
@@ -100,7 +101,7 @@ export function NavigationButtons({
 export function ErrorDisplay({ message }: { message?: string | undefined }) {
     return (
         <div className={`mt-6 h-4 flex items-center gap-2 transition-all duration-300 ${message ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
-            <span className="material-symbols-outlined text-[14px] text-red-500/60">error</span>
+            <AlertCircle className="w-[14px] h-[14px] text-red-500/60" />
             <span className="text-[10px] font-mono uppercase tracking-[0.15em] text-red-500/80">{message}</span>
         </div>
     );

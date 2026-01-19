@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 
 export default function AboutValues() {
     return (
@@ -44,7 +45,7 @@ export default function AboutValues() {
                         href="/contato"
                         className="inline-flex items-center gap-2 border-b border-black pb-1 uppercase font-bold text-sm tracking-widest hover:opacity-60 transition-opacity"
                     >
-                        Bora conversar? <span className="material-symbols-outlined text-lg">east</span>
+                        Bora conversar? <ArrowRight className="w-5 h-5" />
                     </Link>
                 </div>
             </div>

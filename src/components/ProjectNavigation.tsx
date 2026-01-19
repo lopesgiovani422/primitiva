@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { ArrowLeft, Share2 } from 'lucide-react';
 
 export default function ProjectNavigation() {
     const handleShare = async () => {
@@ -24,14 +25,14 @@ export default function ProjectNavigation() {
             <div className="flex items-center justify-between p-4 h-16">
                 <Link href="/"
                     className="flex items-center justify-center size-10 text-white hover:bg-white/10 transition-colors rounded-sm">
-                    <span className="material-symbols-outlined text-[28px]">arrow_back</span>
+                    <ArrowLeft className="w-7 h-7" />
                 </Link>
                 <div className="flex items-center gap-2">
                     <img src="/assets/primitiva/primitiva_logo.svg" alt="Logo Primitiva" className="h-5 w-auto" />
                 </div>
                 <button onClick={handleShare}
                     className="flex items-center justify-center size-10 text-white hover:bg-white/10 transition-colors rounded-sm cursor-pointer">
-                    <span className="material-symbols-outlined text-[24px]">share</span>
+                    <Share2 className="w-6 h-6" />
                 </button>
             </div>
         </nav>

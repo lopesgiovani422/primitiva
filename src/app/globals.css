@@ -11,11 +11,7 @@
   --color-background-dark: #0A0A0A;
 
   --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
-<<<<<<< HEAD
   --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
-=======
-  --font-serif: var(--font-playfair-display), ui-serif, Georgia, serif;
->>>>>>> 57d65913587780013e6e166ba4b4f3bcd1666ef5
   --font-mono: var(--font-space-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   --background-image-grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E");
@@ -26,30 +22,6 @@
 }
 
 @layer base {
-  @font-face {
-    font-family: 'Material Symbols Outlined';
-    font-style: normal;
-    font-weight: 100 700;
-    font-display: swap;
-    src: url('/assets/fonts/material-symbols-outlined-normal-100700.woff2') format('woff2');
-  }
-
-  .material-symbols-outlined {
-    font-family: 'Material Symbols Outlined';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 24px;
-    line-height: 1;
-    letter-spacing: normal;
-    text-transform: none;
-    display: inline-block;
-    white-space: nowrap;
-    word-wrap: normal;
-    direction: ltr;
-    -webkit-font-feature-settings: 'liga';
-    font-feature-settings: 'liga';
-    -webkit-font-smoothing: antialiased;
-  }
 
   ::-webkit-scrollbar {
     width: 6px;
@@ -138,11 +110,7 @@
   }
 
   .font-serif {
-<<<<<<< HEAD
     font-family: var(--font-instrument-serif), ui-serif, Georgia, serif;
-=======
-    font-family: var(--font-playfair-display), ui-serif, Georgia, serif;
->>>>>>> 57d65913587780013e6e166ba4b4f3bcd1666ef5
   }
 
   .font-mono {

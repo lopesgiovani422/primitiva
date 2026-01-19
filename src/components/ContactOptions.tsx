@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ArrowUpRight, ArrowRight } from 'lucide-react';
 
 export default function ContactOptions() {
     return (
@@ -21,9 +22,7 @@ export default function ContactOptions() {
                             WhatsApp
                         </span>
                     </div>
-                    <span className="material-symbols-outlined text-4xl md:text-5xl text-white/50 group-hover:text-white group-hover:-rotate-45 transition-all duration-500">
-                        arrow_outward
-                    </span>
+                    <ArrowUpRight className="w-9 h-9 md:w-12 md:h-12 text-white/50 group-hover:text-white group-hover:-rotate-45 transition-all duration-500" />
                 </a>
 
                 <Link
@@ -38,9 +37,7 @@ export default function ContactOptions() {
                             Formulário
                         </span>
                     </div>
-                    <span className="material-symbols-outlined text-4xl md:text-5xl text-white/50 group-hover:text-white group-hover:translate-x-2 transition-all duration-500">
-                        east
-                    </span>
+                    <ArrowRight className="w-9 h-9 md:w-12 md:h-12 text-white/50 group-hover:text-white group-hover:translate-x-2 transition-all duration-500" />
                 </Link>
             </div>
         </div>

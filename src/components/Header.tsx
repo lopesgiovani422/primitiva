@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ArrowDown } from 'lucide-react';
 
 export default function Header() {
     return (
@@ -34,7 +35,7 @@ export default function Header() {
                         </p>
                     </div>
                     <div className="flex justify-end items-end">
-                        <span className="material-symbols-outlined text-3xl md:text-4xl animate-bounce">arrow_downward</span>
+                        <ArrowDown className="w-8 h-8 md:w-10 md:h-10 animate-bounce" />
                     </div>
                 </div>
             </div>

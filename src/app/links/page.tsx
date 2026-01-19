@@ -1,6 +1,7 @@
 'use client';
 import { useEffect } from 'react';
 import Link from 'next/link';
+import { ArrowUpRight, Mail } from 'lucide-react';
 
 export default function Links() {
     useEffect(() => {
@@ -42,8 +43,7 @@ export default function Links() {
 
                         <div className="flex justify-between items-start relative z-10">
                             <span className="text-[10px] font-mono uppercase tracking-widest opacity-60">Portfolio</span>
-                            <span
-                                className="material-symbols-outlined text-2xl md:text-3xl group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">arrow_outward</span>
+                            <ArrowUpRight className="w-6 h-6 md:w-8 md:h-8 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                         </div>
                         <div className="relative z-10 text-left">
                             <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter leading-none mb-2">Ver<br />Projetos</h2>
@@ -74,8 +74,7 @@ export default function Links() {
                                     className="text-[10px] font-mono uppercase tracking-widest text-white/40 block mb-1">Orçamentos</span>
                                 <h3 className="text-lg md:text-xl font-bold uppercase tracking-tight">Iniciar<br />Projeto</h3>
                             </div>
-                            <span
-                                className="material-symbols-outlined text-2xl md:text-3xl group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">arrow_outward</span>
+                            <ArrowUpRight className="w-6 h-6 md:w-8 md:h-8 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                         </div>
                     </Link>
 
@@ -86,7 +85,7 @@ export default function Links() {
                             <span className="text-xs font-bold uppercase tracking-tight">ola@primitiva.cc</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <span className="material-symbols-outlined text-xl opacity-40">mail</span>
+                            <Mail className="w-5 h-5 opacity-40" />
                         </div>
                     </a>
 

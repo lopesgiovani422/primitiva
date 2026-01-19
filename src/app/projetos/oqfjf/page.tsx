@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import ProjectNavigation from '@/components/ProjectNavigation';
 import ProjectFooter from '@/components/ProjectFooter';
+import { ArrowDown } from 'lucide-react';
 
 export default function OqueFazerEmJF() {
     const carouselRef = useRef<HTMLDivElement>(null);
@@ -102,7 +103,7 @@ export default function OqueFazerEmJF() {
                                 — O Desafio</span>
                             <div
                                 className="hidden md:flex size-12 border border-white/20 rounded-full items-center justify-center mt-auto reveal-img scroll-trigger delay-200">
-                                <span className="material-symbols-outlined text-sm">arrow_downward</span>
+                                <ArrowDown className="w-5 h-5 text-white" />
                             </div>
                         </div>
                         <div className="md:col-span-8 p-12 md:p-24 flex items-center">

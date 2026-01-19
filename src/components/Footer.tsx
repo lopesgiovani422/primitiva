@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 
 export default function Footer() {
     return (
@@ -15,7 +16,7 @@ export default function Footer() {
             <Link href="/briefing"
                 className="w-full bg-white text-black h-16 text-lg font-black uppercase tracking-widest hover:bg-gray-200 transition-colors flex items-center justify-center gap-2 max-w-sm mx-auto reveal-up delay-300">
                 <span>Iniciar Ritual</span>
-                <span className="material-symbols-outlined text-xl">east</span>
+                <ArrowRight className="w-5 h-5" />
             </Link>
 
             <div

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
+import { X } from 'lucide-react';
 
 // Steps
 import Step1 from './steps/Step1';
@@ -200,7 +201,7 @@ export default function Briefing() {
             {/* Exit Link */}
             <Link href="/contato"
                 className="fixed top-8 left-8 z-50 text-white/50 hover:text-white transition-colors flex items-center gap-2 text-sm font-mono uppercase tracking-widest">
-                <span className="material-symbols-outlined text-sm">close</span> Sair
+                <X className="w-4 h-4" /> Sair
             </Link>
 
             {/* Logo */}

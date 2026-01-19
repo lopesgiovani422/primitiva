@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 
 interface ProjectFooterProps {
     nextProject: string;
@@ -18,8 +19,8 @@ export default function ProjectFooter({ nextProject, nextProjectName }: ProjectF
                     href={nextProject}
                     className="text-6xl md:text-8xl font-display font-bold leading-[0.9] tracking-tight group-hover:translate-x-2 transition-transform duration-300 reveal-text scroll-trigger delay-100 flex items-center"
                 >
-                    {nextProjectName}<span
-                        className="material-symbols-outlined text-6xl md:text-8xl align-middle ml-2 group-hover:ml-6 transition-all">arrow_forward</span>
+                    {nextProjectName}
+                    <ArrowRight className="w-16 h-16 md:w-24 md:h-24 ml-2 group-hover:ml-6 transition-all" />
                 </Link>
             </div>
             <div className="flex justify-between items-end mt-12 font-mono text-xs uppercase tracking-widest text-black/60">

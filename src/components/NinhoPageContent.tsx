@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import ProjectNavigation from '@/components/ProjectNavigation';
 import ProjectFooter from '@/components/ProjectFooter';
+import { ArrowDown } from 'lucide-react';
 
 export default function NinhoPageContent() {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -19,13 +20,11 @@ export default function NinhoPageContent() {
 
                     // Event listener for when the player is ready
                     player.addEventListener('ready', () => {
-                        player.setLoop(true);
                         player.play();
                     });
 
                     // Ensure it plays if it loads later
                     player.addEventListener('load', () => {
-                        player.setLoop(true);
                         player.play();
                     });
                 });
@@ -167,7 +166,7 @@ export default function NinhoPageContent() {
                                 01 — O Desafio
                             </span>
                             <div className="hidden md:flex size-12 border border-white/20 rounded-full items-center justify-center mt-auto reveal-img scroll-trigger delay-200">
-                                <span className="material-symbols-outlined text-sm">arrow_downward</span>
+                                <ArrowDown className="w-5 h-5 text-white" />
                             </div>
                         </div>
                         <div className="md:col-span-8 p-12 md:p-24 flex items-center">

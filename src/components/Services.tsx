@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { ChevronDown } from 'lucide-react';
 
 interface ServiceItem {
     title: string;
@@ -59,9 +60,7 @@ export default function Services() {
                                     className={`accordion-trigger flex justify-between items-center w-full py-6 md:px-6 text-left group cursor-pointer hover:bg-white/5 transition-colors outline-none ${activeAccordion === idx ? 'bg-white/5' : ''}`}
                                 >
                                     <span className="text-2xl md:text-4xl font-bold uppercase tracking-tight">{item.title}</span>
-                                    <span className={`material-symbols-outlined text-white/50 group-hover:text-white transition-transform duration-300 icon-toggle text-3xl ${activeAccordion === idx ? 'rotate-180' : ''}`}>
-                                        keyboard_arrow_down
-                                    </span>
+                                    <ChevronDown className={`w-8 h-8 text-white/50 group-hover:text-white transition-transform duration-300 ${activeAccordion === idx ? 'rotate-180' : ''}`} />
                                 </button>
                                 <div className={`accordion-content ${activeAccordion === idx ? 'block' : 'hidden'} px-6 pb-6 text-white/70 font-mono text-sm leading-relaxed max-w-xl`}>
                                     <p>{item.content}</p>

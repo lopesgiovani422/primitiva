@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import { ChevronDown } from 'lucide-react';
 
 interface FAQItem {
     q: string;
@@ -54,9 +55,7 @@ export default function FAQ() {
                                 className="accordion-trigger flex items-center justify-between w-full text-left group cursor-pointer outline-none py-2"
                             >
                                 <span className="text-lg md:text-xl font-bold">{faq.q}</span>
-                                <span className={`material-symbols-outlined transition-transform duration-300 icon-toggle ${activeAccordion === idx ? 'rotate-180' : ''}`}>
-                                    keyboard_arrow_down
-                                </span>
+                                <ChevronDown className={`transition-transform duration-300 icon-toggle ${activeAccordion === idx ? 'rotate-180' : ''}`} />
                             </button>
                             <div className={`accordion-content ${activeAccordion === idx ? 'block' : 'hidden'} mt-4 text-sm leading-relaxed opacity-80 font-serif`}>
                                 {faq.a}
