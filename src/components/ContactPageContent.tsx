@@ -1,0 +1,77 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
+
+import ContactHero from '@/components/ContactHero';
+import ContactOptions from '@/components/ContactOptions';
+import ContactChannels from '@/components/ContactChannels';
+import MinimalFooter from '@/components/MinimalFooter';
+
+export default function ContactPageContent() {
+    const observerRef = useRef<IntersectionObserver | null>(null);
+
+    useEffect(() => {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        observerRef.current = observer;
+
+        const animatedElements = document.querySelectorAll('.reveal-up, .fade-in');
+        animatedElements.forEach(el => observer.observe(el));
+
+        return () => {
+            if (observerRef.current) observerRef.current.disconnect();
+        };
+    }, []);
+
+    return (
+        <main className="bg-background-light dark:bg-background-dark font-display antialiased text-[#181010] dark:text-[#f8f5f5]">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [{
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Home",
+                            "item": "https://primitiva.cc"
+                        }, {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Contato",
+                            "item": "https://primitiva.cc/contato"
+                        }]
+                    })
+                }}
+            />
+            <ContactHero />
+
+            <div className="bg-black text-white min-h-[60vh] border-b border-white/10">
+                <div className="p-6 md:p-12 md:pr-24">
+                    <div className="flex flex-col md:grid md:grid-cols-12 md:gap-12">
+
+                        <ContactOptions />
+                        <ContactChannels />
+
+                    </div>
+                </div>
+            </div>
+
+            <MinimalFooter />
+        </main>
+    );
+}
