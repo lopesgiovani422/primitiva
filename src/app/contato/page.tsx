@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import ContactPageContent from '@/components/ContactPageContent';
 
 export const metadata: Metadata = {
-    title: "Contato | Primitiva",
+    title: "Contato",
     description: "Vamos construir algo único juntos? Entre em contato com a Primitiva e inicie seu projeto de branding e design.",
     openGraph: {
         title: "Fale com a Primitiva",
