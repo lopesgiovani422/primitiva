@@ -46,6 +46,48 @@ export default function Home() {
 
   return (
     <main className="relative flex w-full flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Primitiva — Estúdio Criativo",
+            "image": "https://primitiva.cc/assets/primitiva/primitiva1.jpg",
+            "@id": "https://primitiva.cc",
+            "url": "https://primitiva.cc",
+            "telephone": "",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "",
+              "addressLocality": "Juiz de Fora",
+              "addressRegion": "MG",
+              "postalCode": "",
+              "addressCountry": "BR"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": -21.7642,
+              "longitude": -43.3503
+            },
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
+              "opens": "09:00",
+              "closes": "18:00"
+            },
+            "sameAs": [
+              "https://www.instagram.com/primitiva.estudio"
+            ]
+          })
+        }}
+      />
       <Header />
 
       <Hero />

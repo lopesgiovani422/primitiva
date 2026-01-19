@@ -40,23 +40,57 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://chipper-tiramisu-c22958.netlify.app'),
-  title: "Primitiva — Estúdio Criativo",
-  description: "Estúdio criativo especializado em branding, design e experiências digitais que fogem do óbvio.",
+  metadataBase: new URL('https://primitiva.cc'),
+  title: {
+    default: "Primitiva — Estúdio Criativo",
+    template: "%s | Primitiva"
+  },
+  description: "Estúdio de Design e Tecnologia. Especialistas em Identidade Visual, Branding Estratégico e Desenvolvimento Web de alta performance.",
+  keywords: ["branding", "design", "identidade visual", "estratégia de marca", "web design", "desenvolvimento web", "juiz de fora", "estúdio criativo", "marketing digital", "UX/UI"],
+  authors: [{ name: "Primitiva Studio" }, { name: "Giovani Lopes" }, { name: "Gustavo Tempone" }],
+  creator: "Primitiva Studio",
+  publisher: "Primitiva Studio",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: "Primitiva — Estúdio Criativo",
-    description: "Estúdio criativo especializado em branding, design e experiências digitais que fogem do óbvio.",
-    url: "https://chipper-tiramisu-c22958.netlify.app",
+    description: "Estúdio de Design e Tecnologia. Especialistas em Identidade Visual, Branding e Desenvolvimento Web de alta performance.",
+    url: "https://primitiva.cc",
     siteName: "Primitiva",
     images: [
       {
-        url: "/assets/primitiva/primitiva1.jpg",
+        url: "/assets/primitiva/thumb.jpg",
         width: 1200,
         height: 630,
+        alt: "Primitiva Studio - Branding & Design",
       },
     ],
     locale: "pt_BR",
     type: "website",
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Primitiva — Estúdio Criativo",
+    description: "Estúdio criativo especializado em branding, design e experiências digitais que fogem do óbvio.",
+    images: ["/assets/primitiva/thumb.jpg"],
+    creator: "@primitiva", // Replace if there is a real handle
   },
   icons: {
     icon: [

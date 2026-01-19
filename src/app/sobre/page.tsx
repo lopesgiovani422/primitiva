@@ -1,66 +1,21 @@
-'use client';
+import type { Metadata } from 'next';
+import AboutPageContent from '@/components/AboutPageContent';
 
-import { useEffect, useRef } from 'react';
-
-import AboutPageHero from '@/components/AboutPageHero';
-import AboutOrigin from '@/components/AboutOrigin';
-import AboutSectionImage from '@/components/AboutSectionImage';
-import AboutTeam from '@/components/AboutTeam';
-import AboutValues from '@/components/AboutValues';
-import SimpleFooter from '@/components/SimpleFooter';
+export const metadata: Metadata = {
+    title: "Sobre Nós",
+    description: "Conheça a Primitiva, um estúdio de design e branding em Juiz de Fora. Estratégia, identidade e essência para marcas que querem fugir do óbvio.",
+    openGraph: {
+        title: "Sobre a Primitiva",
+        description: "Conheça nossa história, metodologia e quem faz acontecer no nosso estúdio criativo em Juiz de Fora.",
+        images: ["/assets/primitiva/about_us.webp"],
+        url: "https://primitiva.cc/sobre",
+        type: "profile",
+    },
+    alternates: {
+        canonical: "https://primitiva.cc/sobre"
+    }
+};
 
 export default function Sobre() {
-    const observerRef = useRef<IntersectionObserver | null>(null);
-
-    useEffect(() => {
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.15
-        };
-
-        const observer = new IntersectionObserver((entries, obs) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    obs.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        observerRef.current = observer;
-
-        // Force an initial check
-        const animatedElements = document.querySelectorAll('.reveal-up, .fade-in, .reveal-text');
-        animatedElements.forEach(el => observer.observe(el));
-
-        // Activate nav immediately
-        const nav = document.querySelector('nav');
-        if (nav) nav.classList.add('active');
-
-        // Second pass after a small delay to catch everything
-        setTimeout(() => {
-            animatedElements.forEach(el => observer.observe(el));
-        }, 100);
-
-        return () => {
-            if (observerRef.current) observerRef.current.disconnect();
-        };
-    }, []);
-
-    return (
-        <main className="bg-background-light font-display antialiased text-[#181010]">
-            <AboutPageHero />
-            <AboutOrigin />
-            <AboutSectionImage
-                src="/assets/primitiva/about_us.webp"
-                alt="Primitiva Studio"
-                location="Juiz de Fora — MG"
-                established="2022"
-            />
-            <AboutTeam />
-            <AboutValues />
-            <SimpleFooter />
-        </main>
-    );
+    return <AboutPageContent />;
 }
