@@ -48,7 +48,7 @@ export default function SimpleFooter() {
                                 Behance <span className="opacity-0 group-hover:opacity-100 transition-all -translate-x-1 group-hover:translate-x-0">↗</span>
                             </a>
                             <a className="hover:text-white transition-colors flex items-center gap-2 group"
-                                href="mailto:oi@primitiva.cc">
+                                href="mailto:ola@primitiva.cc">
                                 Email <span className="opacity-0 group-hover:opacity-100 transition-all -translate-x-1 group-hover:translate-x-0">↗</span>
                             </a>
                         </div>

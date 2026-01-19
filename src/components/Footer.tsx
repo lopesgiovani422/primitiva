@@ -25,7 +25,7 @@ export default function Footer() {
                         href="https://www.instagram.com/primitiva.cc" target="_blank" rel="noopener noreferrer">Instagram</a>
                     <a className="hover:text-white transition-colors"
                         href="https://www.behance.net/primitiva.cc" target="_blank" rel="noopener noreferrer">Behance</a>
-                    <a className="hover:text-white transition-colors" href="mailto:oi@primitiva.cc">Email</a>
+                    <a className="hover:text-white transition-colors" href="mailto:ola@primitiva.cc">Email</a>
                 </div>
                 <span className="text-[10px] text-gray-600 font-mono mt-4 md:mt-0">© 2026 Primitiva. Todos os direitos
                     reservados.</span>
