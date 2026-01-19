@@ -4,7 +4,7 @@ export default function AboutSectionImage({ src, alt, location, established }) {
             <img
                 src={src}
                 alt={alt}
-                className="absolute inset-0 w-full h-full object-cover object-center grayscale contrast-125 hover:scale-105 transition-transform duration-[2s]"
+                className="absolute inset-0 w-full h-full object-cover object-center hover:scale-105 transition-transform duration-[2s]"
             />
             <div className="absolute inset-0 bg-black/30"></div>
             <div className="absolute bottom-8 left-8 md:bottom-12 md:left-12 text-white z-10">
