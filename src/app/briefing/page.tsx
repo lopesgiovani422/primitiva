@@ -2,9 +2,22 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 
+interface FormData {
+    nome: string;
+    empresa: string;
+    email: string;
+    whatsapp: string;
+    servico: string;
+    investimento: string;
+    prazo: string;
+    descricao: string;
+    referencia: string;
+    origem: string;
+}
+
 export default function Briefing() {
     const [currentStep, setCurrentStep] = useState(1);
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState<FormData>({
         nome: '',
         empresa: '',
         email: '',
@@ -23,12 +36,12 @@ export default function Briefing() {
     // Calculate progress width
     const progressWidth = currentStep > totalSteps ? '100%' : `${((currentStep - 1) / totalSteps) * 100}%`;
 
-    const handleInputChange = (e) => {
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
-    const showNotification = (message) => {
+    const showNotification = (message: string) => {
         setToast({ show: true, message });
         setTimeout(() => setToast({ show: false, message: '' }), 3000);
     };
@@ -40,7 +53,7 @@ export default function Briefing() {
             const requiredInputs = currentStepEl.querySelectorAll('input[required], textarea[required]');
             let isValid = true;
             requiredInputs.forEach(input => {
-                if (!input.value) isValid = false;
+                if (!(input as HTMLInputElement | HTMLTextAreaElement).value) isValid = false;
             });
 
             if (!isValid && currentStep <= totalSteps) {
@@ -60,22 +73,22 @@ export default function Briefing() {
         }
     };
 
-    const selectOption = (name, value) => {
+    const selectOption = (name: keyof FormData, value: string) => {
         setFormData(prev => ({ ...prev, [name]: value }));
         setTimeout(() => nextStep(), 500);
     };
 
-    const handleKeyDown = (e) => {
+    const handleKeyDown = (e: React.KeyboardEvent) => {
         if (e.key === 'Enter') {
-            const activeEl = document.activeElement;
-            if (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA') {
+            const activeEl = document.activeElement as HTMLElement | null;
+            if (activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA')) {
                 e.preventDefault();
                 nextStep();
             }
         }
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
 
@@ -116,7 +129,7 @@ export default function Briefing() {
         const timeout = setTimeout(() => {
             const currentStepEl = document.querySelector(`[data-step="${currentStep}"]`);
             if (currentStepEl) {
-                const input = currentStepEl.querySelector('input, textarea');
+                const input = currentStepEl.querySelector('input, textarea') as HTMLInputElement | HTMLTextAreaElement | null;
                 if (input) input.focus();
             }
         }, 500);
@@ -271,7 +284,7 @@ export default function Briefing() {
                         value={formData.descricao}
                         onChange={handleInputChange}
                         placeholder="O que te motivou a nos procurar?"
-                        rows="1"
+                        rows={1}
                         className="bg-transparent border-0 border-b-2 border-white/10 py-4 text-2xl md:text-5xl w-full text-white placeholder:text-white/20 focus:outline-none focus:border-white focus:ring-0 transition-colors resize-none"
                     ></textarea>
                     <div className="mt-12 flex items-center gap-4">
@@ -409,7 +422,13 @@ export default function Briefing() {
     );
 }
 
-function StepContainer({ children, isActive, step }) {
+interface StepContainerProps {
+    children: React.ReactNode;
+    isActive: boolean;
+    step: number;
+}
+
+function StepContainer({ children, isActive, step }: StepContainerProps) {
     if (!isActive) return null;
     return (
         <div data-step={step} className={`flex flex-col w-full max-w-4xl step-enter`}>
@@ -418,7 +437,13 @@ function StepContainer({ children, isActive, step }) {
     );
 }
 
-function StepHeader({ stepNumber, title, question }) {
+interface StepHeaderProps {
+    stepNumber: string;
+    title: string;
+    question: string;
+}
+
+function StepHeader({ stepNumber, title, question }: StepHeaderProps) {
     return (
         <>
             <span className="text-xs font-mono uppercase tracking-[0.3em] mb-4 text-white/40">{stepNumber} — {title}</span>
@@ -427,7 +452,13 @@ function StepHeader({ stepNumber, title, question }) {
     );
 }
 
-function OptionCard({ label, selected, onClick }) {
+interface OptionCardProps {
+    label: string;
+    selected: boolean;
+    onClick: () => void;
+}
+
+function OptionCard({ label, selected, onClick }: OptionCardProps) {
     return (
         <div
             onClick={onClick}

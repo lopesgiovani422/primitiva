@@ -2,7 +2,17 @@
 
 import Link from 'next/link';
 
-const projects = [
+interface Project {
+    href: string;
+    image: string;
+    alt: string;
+    tag: string;
+    title: string;
+    delay: string;
+    extraClasses?: string;
+}
+
+const projects: Project[] = [
     {
         href: '/projetos/pedecafe',
         image: '/assets/cover/pedecafe.webp',

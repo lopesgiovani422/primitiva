@@ -1,6 +1,11 @@
 import Link from 'next/link';
 
-export default function ProjectFooter({ nextProject, nextProjectName }) {
+interface ProjectFooterProps {
+    nextProject: string;
+    nextProjectName: string;
+}
+
+export default function ProjectFooter({ nextProject, nextProjectName }: ProjectFooterProps) {
     return (
         <footer
             className="bg-primary text-background-dark p-6 md:p-12 min-h-[50vh] flex flex-col justify-between group cursor-pointer transition-colors duration-500 hover:bg-off-white -mt-6 md:-mt-1 relative z-20">

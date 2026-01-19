@@ -10,7 +10,7 @@ export default function PedeCafe() {
     useEffect(() => {
         import('@dotlottie/player-component').then(() => {
             const players = document.querySelectorAll('dotlottie-player');
-            players.forEach(player => {
+            players.forEach((player: any) => {
                 // Force properties to ensure they are active
                 player.loop = true;
                 player.autoplay = true;
@@ -44,7 +44,7 @@ export default function PedeCafe() {
 
                     // If the target contains lottie players, try to play ALL of them
                     const players = entry.target.querySelectorAll('dotlottie-player');
-                    players.forEach(player => {
+                    players.forEach((player: any) => {
                         if (player.play) {
                             player.play();
                         }
@@ -65,7 +65,7 @@ export default function PedeCafe() {
         };
 
         // Attempt to finish loading when critical image (hero) is loaded
-        const heroImg = document.querySelector('img[fetchpriority="high"]');
+        const heroImg = document.querySelector('img[fetchpriority="high"]') as HTMLImageElement | null;
         if (heroImg && heroImg.complete) {
             finishLoading();
         } else if (heroImg) {
@@ -238,6 +238,7 @@ export default function PedeCafe() {
                     <section className="md:border-b border-white/20 bg-neutral-900 relative overflow-hidden">
                         <div className="relative w-full group overflow-hidden bg-[#111] reveal-img scroll-trigger">
                             <div className="flex md:hidden w-full aspect-[3/4] relative">
+                                {/* @ts-ignore */}
                                 <dotlottie-player id="lottie-cup-mobile" src="/assets/pedecafe/lottie/mobile/animation1.lottie"
                                     background="transparent" speed="1" className="absolute inset-0 w-full h-full"
                                     style={{ width: '100%', height: '100%', pointerEvents: 'none', objectFit: 'cover' }} loop autoplay>
@@ -245,6 +246,7 @@ export default function PedeCafe() {
                             </div>
 
                             <div className="hidden md:block w-full aspect-video relative">
+                                {/* @ts-ignore */}
                                 <dotlottie-player id="lottie-cup-desktop" src="/assets/pedecafe/lottie/desktop/animation1.lottie"
                                     background="transparent" speed="1" className="absolute inset-0 w-full h-full"
                                     style={{ width: '100%', height: '100%', pointerEvents: 'none', objectFit: 'cover' }} loop autoplay>
@@ -313,6 +315,7 @@ export default function PedeCafe() {
 
                                 <div className="relative w-full order-3 md:order-2 -mt-6 md:mt-0 scroll-trigger">
                                     <div className="flex md:hidden w-full aspect-[3/4] relative">
+                                        {/* @ts-ignore */}
                                         <dotlottie-player src="/assets/pedecafe/lottie/mobile/animation2.lottie"
                                             background="transparent" speed="1" className="absolute inset-0 w-full h-full"
                                             style={{ width: '100%', height: '100%', pointerEvents: 'none', objectFit: 'cover', display: 'block' }}
@@ -321,6 +324,7 @@ export default function PedeCafe() {
                                     </div>
 
                                     <div className="hidden md:block w-full aspect-video relative">
+                                        {/* @ts-ignore */}
                                         <dotlottie-player src="/assets/pedecafe/lottie/desktop/animation2.lottie"
                                             background="transparent" speed="1" className="absolute inset-0 w-full h-full"
                                             style={{ width: '100%', height: '100%', pointerEvents: 'none', objectFit: 'cover' }} loop autoplay>

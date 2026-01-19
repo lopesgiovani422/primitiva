@@ -2,7 +2,13 @@
 
 import { useState, useEffect } from 'react';
 
-const testimonials = [
+interface Testimonial {
+    quote: string;
+    author: string;
+    role: string;
+}
+
+const testimonials: Testimonial[] = [
     {
         quote: "A Primitiva não criou apenas um logo, eles traduziram exatamente a essência de tudo o que representava nosso concurso.",
         author: "Mirella Motta",

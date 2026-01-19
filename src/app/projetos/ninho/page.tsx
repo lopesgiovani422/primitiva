@@ -10,7 +10,7 @@ export default function Ninho() {
     useEffect(() => {
         import('@dotlottie/player-component').then(() => {
             const players = document.querySelectorAll('dotlottie-player');
-            players.forEach(player => {
+            players.forEach((player: any) => {
                 player.addEventListener('ready', () => {
                     player.play();
                 });
@@ -30,7 +30,7 @@ export default function Ninho() {
                     observer.unobserve(entry.target);
 
                     // If the target contains a lottie player, try to play it
-                    const player = entry.target.querySelector('dotlottie-player');
+                    const player = entry.target.querySelector('dotlottie-player') as any;
                     if (player && player.play) {
                         player.play();
                     }
@@ -201,6 +201,7 @@ export default function Ninho() {
                     <section className="md:border-b border-white/20 bg-neutral-900 relative overflow-hidden -mt-1">
                         <div className="relative w-full group overflow-hidden bg-[#111] reveal-img scroll-trigger">
                             <div className="w-full aspect-video relative">
+                                {/* @ts-ignore */}
                                 <dotlottie-player id="lottie-cup-unified" src="/assets/ninho/lottie/scene.lottie"
                                     background="transparent" speed="1" className="absolute inset-0 w-full h-full"
                                     style={{ width: '100%', height: '100%', pointerEvents: 'none', objectFit: 'cover' }} loop autoplay>

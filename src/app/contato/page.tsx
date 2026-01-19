@@ -8,7 +8,7 @@ import ContactChannels from '@/components/ContactChannels';
 import MinimalFooter from '@/components/MinimalFooter';
 
 export default function Contato() {
-    const observerRef = useRef(null);
+    const observerRef = useRef<IntersectionObserver | null>(null);
 
     useEffect(() => {
         const observerOptions = {

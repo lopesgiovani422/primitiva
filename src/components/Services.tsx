@@ -2,7 +2,12 @@
 
 import { useState } from 'react';
 
-const services = [
+interface ServiceItem {
+    title: string;
+    content: string;
+}
+
+const services: ServiceItem[] = [
     {
         title: "Estratégia",
         content: "Definimos o posicionamento, tom de voz e o território da marca para garantir relevância no mercado."
@@ -26,9 +31,9 @@ const services = [
 ];
 
 export default function Services() {
-    const [activeAccordion, setActiveAccordion] = useState(null);
+    const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
 
-    const toggleAccordion = (index) => {
+    const toggleAccordion = (index: number) => {
         setActiveAccordion(activeAccordion === index ? null : index);
     };
 

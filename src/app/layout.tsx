@@ -33,7 +33,9 @@ const spaceMono = localFont({
   display: "swap",
 });
 
-export const metadata = {
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
   metadataBase: new URL('https://chipper-tiramisu-c22958.netlify.app'),
   title: "Primitiva — Estúdio Criativo",
   description: "Estúdio criativo especializado em branding, design e experiências digitais que fogem do óbvio.",
@@ -65,7 +67,7 @@ export const metadata = {
   manifest: "/favicon/site.webmanifest",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" className={`light ${spaceGrotesk.variable} ${playfairDisplay.variable} ${spaceMono.variable}`}>
       <body
@@ -76,3 +78,4 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+

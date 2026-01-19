@@ -10,7 +10,7 @@ import AboutValues from '@/components/AboutValues';
 import SimpleFooter from '@/components/SimpleFooter';
 
 export default function Sobre() {
-    const observerRef = useRef(null);
+    const observerRef = useRef<IntersectionObserver | null>(null);
 
     useEffect(() => {
         const observerOptions = {

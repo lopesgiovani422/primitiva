@@ -2,16 +2,21 @@
 
 import { useState } from 'react';
 
-const faqs = [
+interface FAQItem {
+    q: string;
+    a: string;
+}
+
+const faqs: FAQItem[] = [
     { q: "Qual o prazo médio de entrega?", a: "Nossos projetos de branding completos levam em média de 6 a 8 semanas, dependendo da complexidade e do escopo de entrega acordado." },
     { q: "Vocês trabalham com redes sociais?", a: "Focamos na criação da marca e diretrizes visuais. Entregamos templates e direção de arte para social, mas não fazemos a gestão mensal de posts." },
     { q: "Como funciona o pagamento?", a: "Trabalhamos geralmente com 50% de entrada para reserva de agenda e início do projeto, e os 50% restantes na entrega final dos arquivos." }
 ];
 
 export default function FAQ() {
-    const [activeAccordion, setActiveAccordion] = useState(null);
+    const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
 
-    const toggleAccordion = (index) => {
+    const toggleAccordion = (index: number) => {
         setActiveAccordion(activeAccordion === index ? null : index);
     };
 

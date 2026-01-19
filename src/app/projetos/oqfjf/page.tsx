@@ -5,7 +5,7 @@ import ProjectNavigation from '@/components/ProjectNavigation';
 import ProjectFooter from '@/components/ProjectFooter';
 
 export default function OqueFazerEmJF() {
-    const carouselRef = useRef(null);
+    const carouselRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const observerOptions = {
@@ -14,11 +14,11 @@ export default function OqueFazerEmJF() {
             threshold: 0
         };
 
-        const observer = new IntersectionObserver((entries, observer) => {
+        const observer = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
-                    observer.unobserve(entry.target);
+                    obs.unobserve(entry.target);
                 }
             });
         }, observerOptions);
@@ -33,20 +33,22 @@ export default function OqueFazerEmJF() {
         // Carousel Logic
         let currentSlide = 0;
         const slides = document.querySelectorAll('.carousel-slide');
-        let intervalId;
+        let intervalId: NodeJS.Timeout | undefined;
 
         if (slides.length > 0) {
             intervalId = setInterval(() => {
-                if (slides[currentSlide]) {
-                    slides[currentSlide].classList.remove('opacity-100');
-                    slides[currentSlide].classList.add('opacity-0');
+                const prevSlide = slides[currentSlide];
+                if (prevSlide) {
+                    prevSlide.classList.remove('opacity-100');
+                    prevSlide.classList.add('opacity-0');
                 }
 
                 currentSlide = (currentSlide + 1) % slides.length;
 
-                if (slides[currentSlide]) {
-                    slides[currentSlide].classList.remove('opacity-0');
-                    slides[currentSlide].classList.add('opacity-100');
+                const nextSlide = slides[currentSlide];
+                if (nextSlide) {
+                    nextSlide.classList.remove('opacity-0');
+                    nextSlide.classList.add('opacity-100');
                 }
             }, 1200);
         }

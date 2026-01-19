@@ -1,4 +1,11 @@
-export default function AboutSectionImage({ src, alt, location, established }) {
+interface AboutSectionImageProps {
+    src: string;
+    alt: string;
+    location: string;
+    established: string;
+}
+
+export default function AboutSectionImage({ src, alt, location, established }: AboutSectionImageProps) {
     return (
         <section className="w-full h-[60vh] md:h-[80vh] relative overflow-hidden border-b border-black/10 reveal-up">
             <img
