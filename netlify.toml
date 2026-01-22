@@ -1,0 +1,97 @@
+[build]
+command = "npm run build"
+publish = ".next"
+
+# Plugin do Next.js para Netlify (habilita SSR e API Routes)
+[[plugins]]
+package = "@netlify/plugin-nextjs"
+
+# Enable Netlify Image CDN for automatic image optimization
+[images]
+remote_images = ["https://primitiva.cc/.*"]
+
+# Enable Early Hints (HTTP 103) for faster resource loading
+[build.processing]
+skip_processing = false
+
+[build.processing.css]
+bundle = true
+minify = true
+
+[build.processing.js]
+bundle = true
+minify = true
+
+[build.processing.html]
+pretty_urls = true
+
+[build.processing.images]
+compress = true
+
+# Force www to non-www redirect (eliminates www redirect latency)
+[[redirects]]
+from = "https://www.primitiva.cc/*"
+to = "https://primitiva.cc/:splat"
+status = 301
+force = true
+
+# Security and performance headers for all pages
+[[headers]]
+for = "/*"
+
+  [headers.values]
+  # HSTS with preload - eliminates HTTP→HTTPS redirect for returning visitors
+  Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+  # Security headers
+  X-Content-Type-Options = "nosniff"
+  X-Frame-Options = "DENY"
+  Referrer-Policy = "strict-origin-when-cross-origin"
+  # Performance: enable compression and caching hints
+  X-DNS-Prefetch-Control = "on"
+
+# Long-term cache for static assets
+[[headers]]
+for = "/_next/static/*"
+
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache for fonts
+[[headers]]
+for = "/*.woff2"
+
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/*.woff"
+
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache for images
+[[headers]]
+for = "/assets/*"
+
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+
+[[redirects]]
+from = "/_next/image"
+to = "/.netlify/images?url=:url&w=:width&q=:quality"
+status = 200
+
+  [redirects.query]
+  url = ":url"
+  w = ":width"
+  q = ":quality"
+
+[[redirects]]
+from = "/_ipx/*"
+to = "/.netlify/images?url=:url&w=:width&q=:quality"
+status = 200
+
+  [redirects.query]
+  url = ":url"
+  w = ":width"
+  q = ":quality"
